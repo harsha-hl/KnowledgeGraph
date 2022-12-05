@@ -1,0 +1,1079 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Reshmandi</title>
+    <link th:href="@{/css/sample.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/sample.js}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <script src="../static/scripts.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style type="text/css">
+    body{
+    margin: 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+}
+
+.resh{
+    font-family: 'Merienda', cursive;
+    text-align: left;
+    background-color: transparent;
+    color: #BEFB31;
+    margin: 0 ;
+    font-size: 50px;
+    padding: 70px 0 10px 50px;
+}
+
+.line{
+    border: 3px solid #152D35;
+    width: 20%;
+}
+.tableLayout{
+    margin: 50px 20px 30px;
+    max-width: 1400px;
+    overflow-x: auto;
+    padding: 20px 0;
+    background-color: #f7f7f7;
+}
+
+#example_filter{
+    margin: 20px 0 20px 1188px;
+    position: absolute;
+    width: max-content;
+}
+.transactions{
+    background-color: transparent;
+    margin: 50px auto 20px;
+    text-align: center;
+    overflow-y: scroll;
+    height: fit-content;
+    width: fit-content;
+    max-height: 457px;
+    box-shadow: 15px 8px 20px #505050;
+    display: block;
+}
+
+th, td{
+    border: transparent;
+    padding: 15px 20px;
+}
+
+/* .transactions thead tr{
+    background-color: #a7bea4 !important;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    height: 60px;
+}
+
+.transactions tr:nth-child(even){
+    background-color: #b0d1ba;
+}
+
+.transactions tr:nth-child(odd){
+    background-color: #e1ffe2;
+} */
+
+.top{
+    background-color: #efefef;
+    margin: 50px;
+    box-shadow: 10px 5px 15px #989898;
+}
+
+.container{
+    display: inline-block;
+    padding: 40px 115px
+}
+
+thead{
+    background-color: #abaaaa;
+}
+
+tr:nth-child(even){
+    background-color: #c3c3c3;
+}
+
+#example thead{
+    background-color: #dfdfdf;
+}
+
+.top h2{
+    text-align: center;
+    color: #727272;
+    padding-top: 50px;
+}
+
+h2{
+    text-align: center;
+    color: #34573c;
+}
+
+
+#productSpec, #transSpec, #statSpec{
+  /* position: absolute; */
+    margin: -50px auto 0 350px;
+    padding: 5px 5px 10px;
+    width: 50%;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 5px 5px 20px #6d6d6d;
+}
+
+h4{
+    text-align: left;
+    padding-left: 60px;
+    margin-bottom: 5px;
+    color: #152D35;
+}
+
+h1{
+    color: #345B63;
+}
+
+p{
+    text-align: center;
+}
+
+.butn{
+    /* position: absolute; */
+    font-weight: lighter;
+    /* border: 1px solid #80d741; */
+    font-weight: 600;
+    padding: 15px 30px;
+    font-size: 30px;
+    background-color: #4a8854;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    margin: 30px 0 0 150px;
+    transition: transform 0.5s ease;
+}
+
+.butn:hover{
+    transition-duration: 0.5s;
+    transform: translateY(-5px);
+    cursor: pointer;
+    /* background-color: white; */
+    /* color: #80d741; */
+  }
+
+.hoverr {
+  --s: 0.5em;   /* the thickness of the line */
+  --c: #80d741; /* the color */
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+.hoverr:hover {
+  --_p: 100%
+}
+
+canvas{
+    margin: 15px;
+    width: 98%;
+}
+
+.input {
+    width: 78%;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+
+}
+.input:hover, select:hover{
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+select {
+    background-color: #f5f5f5;
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.btn2{
+    margin-top: 10px;
+    display: inline-block;
+    width: 80%;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #80d741;
+    color: white;
+    border: 1px solid #80d741 ;
+    transition-duration: 0.75s;
+}
+
+.btn2:hover{
+    transition-duration: 0.25s;
+    background-color: white;
+    color: #80d741;
+    cursor: pointer;
+}
+
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #80d741;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #80d741;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #80d741;
+}
+
+/* #image{
+    height: 1000px;
+    background-image: url('Logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .box select {
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+
+  .box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .box select option {
+    padding: 30px;
+  }
+         .chartbox{
+             height: 600px;
+              width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+         }
+  #frontcover{
+    background: url("https://i0.wp.com/reshamandi.com/wp-content/uploads/2022/06/Supply-Chain-Vector-Landscape-3.png?fit=1536%2C864&ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1440px;
+    height: 822px;
+  }
+
+  .float-container {
+    padding: 5px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 5px;
+    /* background-color: #ddfb99; */
+}  
+  </style>
+</head>
+<body>
+  <div id="frontcover">
+    <div class="w3-top" style="background-color: transparent">
+      <div class="w3-bar w3-left-align w3-large" style="padding-top:5px;color: #9acd30;"><div id="navbar">
+          <a href="https://www.facebook.com/fbreshamandi"><i class="fa fa-facebook w3-hover-opacity" style="text-indent: 7.5em;">&emsp;</i></a>
+          <a href="https://www.instagram.com/resha_mandi/"><i class="fa fa-instagram w3-hover-opacity">&emsp;</i></a>
+          <a href="https://www.linkedin.com/company/inreshamandi?original_referer=https%3A%2F%2Freshamandi.com%2F"><i class="fa fa-linkedin w3-hover-opacity">&emsp;</i></a>
+          <a href="https://twitter.com/reshamandi"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+          <a href="tel:+917338694594" style="text-indent: 47em;font-size: 15px;text-decoration: none;">&ensp;<i class="fa fa-phone"></i>+91 7338694594</a>
+          <a href="mailto:support@reshamandi.com?subject=Support information need" style="text-indent: 0.5em;font-size: 15px;text-decoration: none;">&ensp;<i class="fa fa-envelope">&ensp;</i>support@reshamandi.com</a>
+          <br>
+      </div>
+      </div>
+  </div>
+  <h1 class="resh"><span><a th:href="@{/query}" style="text-decoration:none;"><img src="Logo.png" width="80" height="70" ></a>
+  </span> Reshamandi</h1>
+  <div id="image">
+      <div class="row">
+        <div class="col-md-3" style="margin-top: 25px; padding-top:50px; background-color: white; padding-bottom: 60px;">
+          <button onclick="toggle(productSpec)" class="butn hoverr" style="background-color: #befa90">Products</button>
+          <button onclick="toggle(statSpec)" class="butn hoverr" style="background-color: #befa90">Statistics</button>
+          <button onclick="toggle(transSpec)" class="butn hoverr" style="background-color: #befa90">Transactions</button>
+          <button onClick="parent.open('/patch')" class="butn hoverr" style="background-color: #befa90; width: 100%;">Update DB</button>
+        </div>
+        <div class="col-md-9">
+          <div id="productSpec" style="display: none; margin-top: 75px;" class="query">
+            <form action="#" th:action="@{/products}" th:object="${prods}" method="post">
+                <h1 style="margin-bottom: -20px;">Products</h1>  <br>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>Role</h4>
+                  <input type="radio" id="filter" name="filter" value="Split" checked>
+                  <label for="filter">Split</label><br>
+                  <input type="radio" id="filter" name="filter" value="Total">
+                  <label for="filter">Total</label><br>
+                  </div>
+                  <div class="float-child">
+                    <h4>Type</h4>
+                    <select name="type" multiple size="3" >
+                    <option th:each="type: ${prod_type}" th:value="${type}" th:text="${type}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="float-container">
+                  <div class="float-child">
+                      <h4>Category</h4>
+                      <select name="category" multiple size="3" >
+                          <option th:each="category: ${prod_cat}" th:value="${category}" th:text="${category}"></option>
+                      </select>
+                    </div> 
+                    <div class="float-child">
+                      <h4>Weave</h4>
+                      <select name="weave" multiple size="3" >
+                          <option th:each="weave: ${prod_weave}" th:value="${weave}" th:text="${weave}"></option>
+                      </select>                  
+                    </div>
+                  </div>
+                  <div class="float-container">
+                    <div class="float-child" style="width: 100%;">
+                        <h4 style="text-align: center;">Attributes</h4>
+                        <div th:each="row, prod: ${attributes}" th:if="${row[1] != (ne)}">
+                            <label for="${attrs[prod.index]}" th:text="${row[0]}" style="text-align: left; position: relative; top: -23px;"></label>
+                            <select th:name="${attrs[prod.index]}" multiple size="2">
+                                    <option th:each="element, prods: ${row}" th:value="${element}" th:if="${prods.index != 0 && element != (ne)}"><span th:text="${element}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <p><input type="submit" value="Submit" class="btn2" /> 
+                    <input type="reset" value="Reset" class="btn2"/>
+                </p>
+            </form>
+        </div>
+    
+        <div id="transSpec" style="display: none;" class="query">
+            <form action="#" th:action="@{/transactions}" th:object="${trans}" method="post">
+                <h1 style="margin-bottom: -20px;">Transactions</h1>  <br>
+
+
+                <h4>Role</h4>
+                <input type="radio" id="role" name="role" value="Weaver" checked>
+                <label for="role">Weaver</label><br>
+                <input type="radio" id="role" name="role" value="Retailer">
+                <label for="role">Retailer</label><br>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>ID</h4><input id="ID" name="ID">
+                    <br>
+                  </div>
+                  <div class="float-child">
+                    <h4>Month</h4>
+                    <select name="Month" multiple size="3" >
+                        <option th:each="month: ${trans_months}" th:value="${month}" th:text="${month}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>States</h4>
+                    <select name="State" multiple size="3" >
+                        <option th:each="state: ${trans_states}" th:value="${state}" th:text="${state}"></option>
+                    </select>
+                  </div>
+                  <div class="float-child">
+                    <h4>Category</h4>
+                    <select name="category" multiple size="3" >
+                        <option th:each="category: ${categories}" th:value="${category}" th:text="${category}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>Weave</h4>
+                    <select name="weave" multiple size="3" >
+                        <option th:each="weave: ${weaves}" th:value="${weave}" th:text="${weave}"></option>
+                    </select>
+                  </div>
+                  <div class="float-child">
+                    <h4>Type</h4>
+                    <select name="type" multiple size="3" >
+                        <option th:each="type: ${types}" th:value="${type}" th:text="${type}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="float-container">
+                    <div class="float-child" style="width: 100%;">
+                        <h4 style="text-align: center;">Attributes</h4>
+                        <div th:each="row, tran: ${attributes}" th:if="${row[1] != (ne)}">
+                            <label for="${attrs[tran.index]}" th:text="${row[0]}" style="text-align: left; position: relative; top: -23px;"></label>
+                            <select th:name="${attrs[tran.index]}" multiple size="2">
+                                    <option th:each="element, trans: ${row}" th:value="${element}" th:if="${trans.index != 0 && element != (ne)}"><span th:text="${element}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <p><input type="submit" value="Submit" class="btn2" /> 
+                    <input type="reset" value="Reset" class="btn2"/>
+                </p>
+            </form>
+        </div>
+        
+        <div id="statSpec" style="display: none; margin-top: 10px;" class="query">
+            <form action="#" th:action="@{/statistics}" th:object="${q12}" method="post">
+                <h1 style="margin-bottom: -20px;">Statistics</h1>  <br>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>Role</h4>
+                    <input type="radio" id="w" name="role"  value="Weaver" checked>
+                    <label for="w">Weaver</label><br>
+                    <input type="radio" id="r" name="role" value="Retailer">
+                    <label for="r">Retailer</label><br>
+                  </div>
+                  <div class="float-child">
+                    <h4>Product Spec</h4>
+                    <select name="productSpec" size="3" >
+                        <option th:each="spec: ${productSpecs}" th:value="${spec}" th:if="${spec != (ne)}"><span th:text="${spec}"></span></option>
+                    </select>
+                    
+                  </div>
+                </div>
+
+                <div class="float-container">
+                    <div class="float-child">
+                      <h4>Start Date</h4>
+                        <input type="datetime-local" id="start" name="dateTime"
+                            value="2022-10-8"
+                            min="2016-01-01" max="2050-12-31">
+                    </div>
+                    <div class="float-child">
+                        <h4>End Date</h4>
+                          <input type="datetime-local" id="start" name="endDateTime"
+                              value="2022-10-8"
+                              min="2016-01-01" max="2050-12-31">
+                      </div>
+                    
+                  </div>
+
+
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>Filter</h4>
+                    <select name="filter" size="3">
+                        <option th:value="Month">Month</option>
+                        <option th:value="State">State</option>
+                        <option th:value="Year">Year</option>
+                    </select>
+                  </div>
+                  <div class="float-child">
+                    <h4>States</h4>
+                    <select name="states" multiple size="3" >
+                        <option th:each="state: ${states}" th:value="${state}" th:text="${state}"></option>
+                    </select>
+                  </div>
+                </div>
+                <div class="float-container">
+                  <div class="float-child">
+                    <h4>Seasons</h4>
+                    <select name="seasons" multiple size="3" >
+                        <option th:each="season: ${seasons}" th:value="${season}" th:text="${season}"></option>
+                    </select>
+                  </div>
+                  <div class="float-child">
+                    <h4>Years</h4>
+                    <select name="years" multiple size="3" >
+                        <option th:each="year: ${years}" th:value="${year}" th:text="${year}"></option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="float-container">
+                    <div class="float-child" style="width: 100%;">
+                        <h4 style="text-align: center;">Attributes</h4>
+                        <div th:each="row, stat: ${attributes}" th:if="${row[1] != (ne)}">
+                            <label for="${attrs[stat.index]}" th:text="${row[0]}" style="text-align: left; position: relative; top: -23px;"></label>
+                            <select th:name="${attrs[stat.index]}" multiple size="2">
+                                    <option th:each="element, stats: ${row}" th:value="${element}" th:if="${stats.index != 0 && element != (ne)}"><span th:text="${element}"></span></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <p><input type="submit" value="Submit" class="btn2" /> 
+                    <input type="reset" value="Reset" class="btn2"/>
+                </p>
+            </form>
+        </div>
+        </div>
+      </div>
+
+  </div>
+  </div>
+
+
+    <div th:switch="${tableDisplay}" class="tableLayout">
+        <table id="example" th:case=1 class="display" style="width:100%">
+            <thead>
+            <tr>
+                <th th:each="element: ${headData}" th:text="${element}">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row: ${data1}">
+                <td th:each="element: ${row}" th:text="${element}">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:switch="${tableDisplay_top10}" class="tableLayout">
+        <table id="example10" th:case=1 class="display1" style="width:100%">
+            <thead>
+            <tr>
+                <th th:each="element: ${headData_top10}" th:text="${element}">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row: ${data10}">
+                <td id="ex2" th:each="element: ${row}"  th:if= "${element != null}" th:text="${element}">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:switch="${tableDisplay_top10}" class="tableLayout">
+        <table id="example10" th:case=1 class="display1" style="width:100%">
+            <thead>
+            <tr>
+                <th th:each="element: ${headData2_top10}" th:text="${element}">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row: ${data10_wr}">
+                <td id="ex2" th:each="element: ${row}"  th:if= "${element != null}" th:text="${element}">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <section>
+
+      <aside>
+        <div th:switch="${tableDisplay}">
+            <div>
+                <select th:case=1 id = "p2" style="width: 10%; margin-left: 45%;">
+                    <option th:each="val:${param2}" th:value="${val}" th:text="${val}"></option>
+            </div>
+            </select></div>
+    </aside>
+        <div th:switch="${chart}" class="chartbox">
+            <canvas th:case=1 id="myChart" width="2" height="2"></canvas>
+        </div>
+        <div th:switch="${chart1}" class="chartbox">
+            <canvas th:case=1 id="myChart1" width="2" height="2"></canvas>
+        </div>
+        <div th:switch="${chart2}" class="chartbox">
+            <canvas th:case=1 id="myChart2" width="2" height="2"></canvas>
+        </div>
+        <div th:switch="${chart3}" class="chartbox">
+            <canvas th:case=1 id="myChart3" width="2" height="2"></canvas>
+        </div>
+        <div th:switch="${chart4}" class="chartbox">
+            <canvas th:case=1 id="myChart4" width="2" height="2"></canvas>
+        </div>
+        
+  </section>
+
+
+
+    <script th:inline="javascript">
+        $(document).ready(function () {
+     $('#example').DataTable({
+         pagingType: 'full_numbers',
+     });
+ });
+    console.log("hksfjh");
+     const plugin = { //bckgrnd color for graph
+   id: 'custom_canvas_background_color',
+   beforeDraw: (chart) => {
+     const ctx = chart.canvas.getContext('2d');
+     ctx.save();
+     ctx.globalCompositeOperation = 'destination-over';
+     ctx.fillStyle = 'lightBlue';
+     ctx.fillRect(0, 0, chart.width, chart.height);
+     ctx.restore();
+   }
+ };
+     var dataset = /*[[${data}]]*/ null; //query solution
+     var r = /*[[${data_row}]]*/ null; //no of rows
+     var c = /*[[${data_col}]]*/ null; //no of cols
+     console.log(r);
+     console.log(c);
+     let Labels = [];
+     let Datapoints = [];
+     var m = /*[[${m}]]*/ null; //query solution
+     var q = /*[[${data1}]]*/ null; //query solution
+     console.log(m);
+     console.log(q);
+     var q1=[];
+     let i;
+        let weavers = [];
+     if(q!=null){
+     for(i=0;i<q.length;i++){
+        q1[i]=q[i][2];
+     }
+  
+     for(i=0;i<q.length;i++){
+        weavers[i]=q[i][1];
+     }}
+     W = new Set(weavers);
+     console.log(q1);
+     console.log(W);
+     let PID = [];
+     for(i=0;i<q.length;i++){
+        PID[i]=q[i][7];
+     }
+     Pid = new Set(PID);
+     console.log("q2 "+ q2);
+     console.log("Pid " + Pid.size);
+
+     var q2 = [];
+     for(i=0;i<q1.length;i++) q2[i]=parseFloat(q1[i]);
+     console.log(q2);
+     console.log(W[1]);
+     var Quantity = [];
+     let j=0;
+     for(item of W.values()){
+     var quantity_final = [0,0,0,0,0,0,0,0,0,0,0,0];
+     for(i=0;i<q.length;i++){
+        if(q[i][1]== String(item)){
+        switch(q[i][4]){
+            case 'January': quantity_final[0]+=q2[i]; break;
+            case 'February': quantity_final[1]+=q2[i]; break;
+            case 'March': quantity_final[2]+=q2[i]; break;
+            case 'April': quantity_final[3]+=q2[i]; break;
+            case 'May': quantity_final[4]+=q2[i]; break;
+            case 'June': quantity_final[5]+=q2[i]; break;
+            case 'July': quantity_final[6]+=q2[i]; break;
+            case 'August': quantity_final[7]+=q2[i]; break;
+            case 'September': quantity_final[8]+=q2[i]; break;
+            case 'October': quantity_final[9]+=q2[i]; break;
+            case 'November': quantity_final[10]+=q2[i]; break;
+            case 'December': quantity_final[11]+=q2[i]; break;
+        }}
+     }
+     Quantity[j++] = quantity_final;
+    }
+     console.log(Quantity);
+     var Quantity_p = [];
+
+var Product_dict = {};
+var Product_names = {};
+//    for(items in Pid.values()) Product_dict[items] = 0;
+
+for(i=0;i<q.length;i++){
+  let val;
+  if(Product_dict[q[i][7]])
+  val = Product_dict[q[i][7]] + q2[i];
+  else val = q2[i];
+  Product_dict[q[i][7]] =  val;
+
+}
+for(i=0;i<q.length;i++){
+  let val;
+  if(!(Product_names[q[i][7]]))
+  Product_names[q[i][7]] = q[i][8]+" "+q[i][9]+" "+q[i][10] ;
+
+}
+console.log(Product_dict); let Pquan=[];
+console.log(Product_names); let Pname = []; 
+var a=0;
+for(key in Product_dict){
+  Pquan[a] = Product_dict[key];
+  Pname[a++] = Product_names[key];
+}
+console.log(Pquan);  console.log(Pname);
+     var val = 1; //can be between 1 to c-1 (to select specific parameter - city,region,season)
+     for(i=0;i<r-1;i++) { Labels[i]=dataset[i+1][0]; Datapoints[i]=parseInt(dataset[i+1][val]);}
+     console.log(Labels); //x axis vals
+     console.log(Datapoints);//y axis vals
+
+     var cha = /*[[${chart}]]*/ null;
+
+  
+ var DATA=[]
+ let k=0;
+ for(item of W.values()){
+  // var Quantity = quantity[i];
+  var obj = {
+    label: item,
+          data: Quantity[k++],
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)'
+          ],
+          borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+          ],
+          hoverOffset: 5,
+          borderWidth: 1,
+          tension: 0.4,
+  }
+  DATA.push(obj);
+}
+console.log(DATA + typeof(DATA));
+console.log(m + typeof(m))
+
+var c1 = /*[[${chart1}]]*/ null;
+if(c1==1){ const ctx1 = document.getElementById('myChart1').getContext('2d');
+ const myChart1 = new Chart(ctx1, { //graph definition
+     type: 'line',
+     data: {
+        labels: m,
+        datasets: DATA,
+    },
+     plugins: [plugin],
+     options: {
+       plugins: {
+             title: {
+                 display: true,
+                 text: 'Weaver graph'
+             },
+
+         },
+
+     }
+
+ });}
+
+ var c2 = /*[[${chart2}]]*/ null;
+ if(c2==1){
+ const ctx2 = document.getElementById('myChart2').getContext('2d');
+ const myChart2 = new Chart(ctx2, { //graph definition
+     type: 'bar',
+     data: {
+         labels: Pname,
+         datasets: [{
+             data: Pquan,
+             backgroundColor: [
+             'rgba(255, 99, 132, 0.7)',
+
+                 'rgba(255, 206, 86, 0.7)',
+                 'rgba(75, 192, 192, 0.7)',
+                 'rgba(153, 102, 255, 0.7)',
+                 'rgba(255, 159, 64, 0.7)'
+             ],
+             borderColor: [
+             'rgba(255, 99, 132, 1)',
+
+                 'rgba(255, 206, 86, 1)',
+                 'rgba(75, 192, 192, 1)',
+                 'rgba(153, 102, 255, 1)',
+                 'rgba(255, 159, 64, 1)'
+             ],
+             hoverOffset: 5,
+             borderWidth: 1,
+         }
+         ]
+     },
+     plugins: [plugin],
+     options: {
+       plugins: {
+             title: {
+                 display: true,
+                 text: 'Product vs Quantity'
+             },
+
+         },
+
+     }
+
+ });
+ }
+ var weavtop10 = /*[[${data10_wr}]]*/ null; //query solution
+var wid =[]; var wq =[]; let b;
+if(weavtop10!=null){
+for(b=0;b<weavtop10.length && weavtop10[b][0]!=null ;b++){
+    wid[b] = weavtop10[b][0];
+    wq[b] = parseFloat(weavtop10[b][1]);
+}
+console.log("wid " + wid);
+console.log("wid2 " + wq);
+}
+var c3 = /*[[${chart3}]]*/ null;
+if(c3==1){
+const ctx3 = document.getElementById('myChart3').getContext('2d');
+ const myChart3 = new Chart(ctx3, { //graph definition
+     type: 'doughnut',
+     data: {
+         labels: wid,
+         datasets: [{
+             data: wq,
+             backgroundColor: [
+             '#003f5c',
+                '#2f4b7c',
+                '#665191',
+                '#a05195',
+                '#d45087',
+                '#f95d6a',
+                '#ff7c43',
+                '#ffa600',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+             ],
+             borderColor: [
+             '#003f5c',
+                '#2f4b7c',
+                '#665191',
+                '#a05195',
+                '#d45087',
+                '#f95d6a',
+                '#ff7c43',
+                '#ffa600',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+             ],
+             hoverOffset: 5,
+             borderWidth: 1,
+         }
+         ]
+     },
+     plugins: [plugin],
+     options: {
+       plugins: {
+             title: {
+                 display: true,
+                 text: /*[[${lab}]]*/ null
+             },
+
+         },
+
+     }
+
+ });
+}
+
+ 
+
+ function toggle(ele){
+    const divs = document.querySelectorAll('.query');
+    for(let i = 0;i<divs.length;i++){
+        divs[i].style.display = "none";
+    }
+    ele.style.display = "block";
+}
+
+var dataset1 = /*[[${data1}]]*/ null; //query solution
+
+var P = []; var Q=[];
+
+for(i=0;i<dataset1.length;i++){
+    P[i]=dataset1[i][1]+" "+dataset1[i][2]+" "+dataset1[i][3];
+    Q[i]=Math.abs(parseFloat(dataset1[i][4]));
+}
+console.log("dataset1"+P);
+console.log("dataset1"+Q);
+var c4 = /*[[${chart4}]]*/ null;
+if(c4==1){
+const ctx4 = document.getElementById('myChart4').getContext('2d');
+ const myChart4 = new Chart(ctx4, { //graph definition
+     type: 'bar',
+     data: {
+         labels: P,
+         datasets: [{
+             data: Q,
+             backgroundColor: [
+             '#003f5c',
+                '#2f4b7c',
+                '#665191',
+                '#a05195',
+                '#d45087',
+                '#f95d6a',
+                '#ff7c43',
+                '#ffa600',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+             ],
+             borderColor: [
+             '#003f5c',
+                '#2f4b7c',
+                '#665191',
+                '#a05195',
+                '#d45087',
+                '#f95d6a',
+                '#ff7c43',
+                '#ffa600',
+                'rgba(54, 162, 235, 0.9)',
+                'rgba(255, 206, 86, 0.9)',
+             ],
+             hoverOffset: 5,
+             borderWidth: 1,
+         }
+         ]
+     },
+     plugins: [plugin],
+     options: {
+       plugins: {
+             title: {
+                 display: true,
+                 text: "Product vs Stock"
+             },
+
+         },
+
+     }
+
+ });}
+
+ // has to be last thing
+
+
+ const ctx = document.getElementById('myChart').getContext('2d');
+ const myChart = new Chart(ctx, { //graph definition
+     type: 'bar',
+     data: {
+         labels: Labels,
+         datasets: [{
+             data: Datapoints,
+             backgroundColor: [
+             'rgba(255, 99, 132, 0.7)',
+
+                 'rgba(255, 206, 86, 0.7)',
+                 'rgba(75, 192, 192, 0.7)',
+                 'rgba(153, 102, 255, 0.7)',
+                 'rgba(255, 159, 64, 0.7)'
+             ],
+             borderColor: [
+             'rgba(255, 99, 132, 1)',
+
+                 'rgba(255, 206, 86, 1)',
+                 'rgba(75, 192, 192, 1)',
+                 'rgba(153, 102, 255, 1)',
+                 'rgba(255, 159, 64, 1)'
+             ],
+             hoverOffset: 5,
+             borderWidth: 1,
+         }
+         ]
+     },
+     plugins: [plugin],
+     options: {
+       plugins: {
+             title: {
+                 display: true,
+                 text: 'Graph'
+             },
+
+         },
+
+     }
+
+ });
+
+
+ var p2val = document.getElementById('p2');
+ p2val.addEventListener('change',param2_tracker);
+ function param2_tracker(){ //function to change graph as selection changes
+     console.log(p2val.value);
+     for(i=1;i<c;i++) if(dataset[0][i]==p2val.value) val=i;
+     for(i=0;i<r-1;i++) Datapoints[i]=parseInt(dataset[i+1][val]);
+     console.log(Datapoints);
+     myChart.data.datasets[0].data = Datapoints;
+     myChart.update();
+ }
+  </script>
+
+
+</body>
+</html>

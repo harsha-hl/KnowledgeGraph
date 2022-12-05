@@ -1,0 +1,114 @@
+creating new product node
+
+MERGE (p1:Product{pdtid:"225263",type:"Art-silk" , weave: "JACQUARD" , category:"Girls-Womens-suit"})
+return p1
+
+
+Creating weaver node
+
+MERGE (w:Weaver{phone:"8386947675",name:"John Figueroa",yarn_cocoon_type:"ARM white",state:"Nagaland",id:"10001",yarn_capacity:"18.01521003",type:"twisted",twisted_type:"weft",denier:"20-22"})
+return w
+
+
+Creating Retailer node
+
+MERGE (r:Retailer{retailer_of:"Saree",name:"Noel Hall",majority_sourced_textile:"Lehnga",id:"12001",state:"Jammu and Kashmir"})
+return r
+
+Creating soldby relation
+Match (w:Weaver)
+WHERE w.id = "10001"
+Match (r:Retailer)
+WHERE (r.id = "12001")
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (w)-[rl:soldBy{selling_price:"176",return_quantity:"192",cst:"5.11064997",discount_amount:"2%",discount:"55.27503189",weaver_id:"10346",gross_amount:"912.7802418",type:"Accessories",sold_quantity:"54.02832662",igst:"3.229263559",uom:"Kgs",gst_amount:"36",sku_listing_status:"purchased",warehouseid:"5",sku_total_quantity:"9.483329607",business_type:"ECD",returned_defective_quantity:"189",state:"Sikkim",id:"12020",landing_price:"190",cost_price:"168",transaction_id:"202239",quantity:"54.52832662",total_pre_tax_price:"862",pdt_id:"214161",created_by:"8386947675",gst_percentage:"527.7777777777778%",month:"March",total_amount:"968.0552736",sku_count:"11",logistics_amount:"22",defective_count:"0",created_date:"2017-09-06 20:51:45",category:"AC-Blanket(DOHAR)",weave:"ROYAL-OXFORD",status:"Sold"}]->(p)
+return rl
+
+creating Boughtby relation
+Match (r:Retailer)
+WHERE (r.id = "12001")
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (p)-[rl:boughtBy{selling_price:"108",cst:"4.701949533",discount_amount:"8.010892558",discount:"5.1023674089554305%",gross_amount:"291.2837492",type:"Accessories",sold_quantity:"4.073555387",igst:"5.184966649",gst_amount:"96",uom:"Meters",sku_listing_status:"purchased",warehouseid:"5",sku_total_quantity:"11.30337604",business_type:"ECD",state:"Telangana",id:"10753",landing_price:"166",cost_price:"139",transaction_id:"101072",quantity:"4.573555387",total_pre_tax_price:"123",retailer_id:"12957",pdt_id:"214161",created_by:"8386947675",gst_percentage:"8%",month:"March",total_amount:"298.4914395",sku_count:"25",logistics_amount:"27",created_date:"2016-09-16 04:50:54",category:"AC-Blanket(DOHAR)",weave:"ROYAL-OXFORD",status:"New"}]->(r)
+return rl
+
+
+creating type node
+MERGE (t:Type{type:"Accessories"})
+return t
+
+linking to product
+MATCH (t:Type)
+WHERE t.type ="Accessories"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (t)-[r:typeName{type : "Accessories"}]->(p)
+return r
+
+
+Creating category node
+MERGE (t:Category{category:"AC-Blanket(DOHAR)"})
+return t
+
+
+Linking 
+MATCH (t:Category)
+WHERE t.category ="AC-Blanket(DOHAR)"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (t)-[r:categoryName{category : "AC-Blanket(DOHAR)"}]->(p)
+return r
+
+creating weave node
+MERGE (t:Weave{weave:"Plain"})
+return t
+
+linking 
+MATCH (t:Weave)
+WHERE t.weave ="Plain"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (t)-[r:weaveName{weave : "Plain"}]->(p)
+return r
+
+
+Creating month
+MERGE (m:Month{month : "March"})
+return m
+
+linking1 - soldMonth
+MATCH (m:Month)
+WHERE m.month = "March"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (m)-[r:soldMonth{transaction_id:"210084",month:"January",weaver_id:"1715",state:"Meghalaya",created_date:"2019-08-22 13:31:26",pdt_id:"325361"}]->(p)
+return r
+
+linking2 - boughtMonth
+MATCH (m:Month)
+WHERE m.month = "March"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (m)-[r:boughtMonth{transaction_id:"210085",month:"January",retailer_id:"12587",state:"Meghalaya",created_date:"2019-08-22 13:31:26",pdt_id:"325361"}]->(p)
+return r
+
+Creating state node 
+MERGE (s:State{state : "Karnataka"})
+RETURN s
+
+linking 1 - boughtState
+MATCH (m:State)
+WHERE m.state = "Karnataka"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (m)-[r:boughtState{transaction_id:"210085",month:"January",retailer_id:"12587",state:"Meghalaya",created_date:"2019-08-22 13:31:26",pdt_id:"325361"}]->(p)
+return r
+
+linking 2  - soldState
+MATCH (m:State)
+WHERE m.state = "Karnataka"
+MATCH (p:Product)
+WHERE p.pdtid = "225263"
+MERGE (m)-[r:soldState{transaction_id:"210085",month:"January",weaver_id:"11587",state:"Meghalaya",created_date:"2019-08-22 13:31:26",pdt_id:"325361"}]->(p)
+return r

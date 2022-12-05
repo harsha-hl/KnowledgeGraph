@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Reshmandi</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+    <script src="../static/scripts.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+    
+<body>
+        <div class="w3-top" style="background-color: white;">
+    <div class="w3-bar w3-left-align w3-large" style="padding-top:5px;color: #9acd30;"><div id="navbar">
+        <a href="https://www.facebook.com/fbreshamandi"><i class="fa fa-facebook w3-hover-opacity" style="text-indent: 7.5em;">&emsp;</i></a>
+        <a href="https://www.instagram.com/resha_mandi/"><i class="fa fa-instagram w3-hover-opacity">&emsp;</i></a>
+        <a href="https://www.linkedin.com/company/inreshamandi?original_referer=https%3A%2F%2Freshamandi.com%2F"><i class="fa fa-linkedin w3-hover-opacity">&emsp;</i></a>
+        <a href="https://twitter.com/reshamandi"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+        <a href="tel:+917338694594" style="text-indent: 47em;font-size: 15px;text-decoration: none;">&ensp;<i class="fa fa-phone"></i>+91 7338694594</a>
+        <a href="mailto:support@reshamandi.com?subject=Support information need" style="text-indent: 0.5em;font-size: 15px;text-decoration: none;">&ensp;<i class="fa fa-envelope">&ensp;</i>support@reshamandi.com</a>
+        <br><hr style=" margin: 0.3em auto;">
+    </div>
+        <a href="https://reshamandi.com/" style="text-decoration:none;padding-left: 7.5em;"><img src="navlogo.png" width="95" height="95" ></a>
+    </div><hr style=" margin: 0.3em auto;">
+</div>
+<br><br><br><br><br><br>
+<h1 class="resh">Reshamandi</h1>
+
+<div id="retSpec" class="query">
+    <form action="#" th:action="@{/retailer}" th:object="${ret}" method="post">
+        <h1 style="margin-bottom: -20px;">Statistics</h1>  <br>
+
+        <input name="role" value="Retailer" hidden />
+
+        <br>
+        <label for="w">ID</label><input id="id2" name="id"  value="null">
+        <br>
+
+        <label for="w">Created By</label><input id="createdBy" name="created_by"  value="null">
+        <br>
+
+        <label for="w">Created Date</label><input id="createdDate" name="created_date"  value="null">
+        <br>
+
+        <label for="w">Category</label><input id="category2" name="category"  value="null">
+        <br>
+
+        <label for="w">Cost Price</label><input id="costPrice" name="cost_price"  value="null">
+        <br>
+
+        <label for="w">Quantity</label><input id="quantity2" name="quantity"  value="null">
+        <br>
+        
+        <label for="w">Selling Price</label><input id="sellingPrice" name="selling_price"  value="null">
+        <br>
+
+        <label>Status</label>
+        <select name="status" multiple size="3" >
+            <option th:each="st: ${status}" th:value="${st}" th:text="${st}"></option>
+        </select><br>
+
+        <label for="w">Type</label><input id="type2" name="type"  value="null">
+        <br>
+
+        <label for="w">Warehouse ID</label><input id="warehouseid2" name="warehouseid"  value="null">
+        <br>
+
+        <label for="w">Sold Quantity</label><input id="soldQuantity" name="sold_quantity"  value="null">
+        <br>
+
+        <label>Sku Listing Status</label>
+        <select name="sku_listing_status" multiple size="3" >
+            <option th:each="sku_st: ${skuListingStatus}" th:value="${sku_st}" th:text="${sku_st}"></option>
+        </select><br>
+
+        <label for="w">Landing Price</label><input id="landingPrice" name="landing_price"  value="null">
+        <br>
+
+        <label>UOM</label>
+        <select name="uom" multiple size="3" >
+            <option th:each="UOM: ${uom}" th:value="${UOM}" th:text="${UOM}"></option>
+        </select><br>
+
+        <label for="w">GST Amount</label><input id="gstAmount" name="gst_amount"  value="null">
+        <br>
+
+        <label for="w">GST Percentage</label><input id="gstPercentage" name="gst_percentage"  value="null">
+        <br>
+
+        <label for="w">Logistics Amount</label><input id="logisticsAmount" name="logistics_amount"  value="null">
+        <br>
+
+        <label for="w">Weave</label><input id="weave2" name="weave"  value="null">
+        <br>
+
+        <label for="w">cst</label><input id="cst2" name="cst"  value="null">
+        <br>
+
+        <label for="w">IGST</label><input id="igst2" name="igst"  value="null">
+        <br>
+
+        <label for="w">Total Amount</label><input id="totalAmount" name="total_amount"  value="null">
+        <br>
+
+        <label for="w">Total Pre Tax Price</label><input id="totalPreTaxPrice" name="total_pre_tax_price"  value="null">
+        <br>
+
+        <label for="w">Sku Count</label><input id="skuCount" name="sku_count"  value="null">
+        <br>
+
+        <label for="w">Sku Total Quantity</label><input id="skuTotalQuantity" name="sku_total_quantity"  value="null">
+        <br>
+
+        <label for="w">State</label><input id="state2" name="state"  value="null">
+        <br>
+
+        <label for="w">Retailer ID</label><input id="retailerId" name="retailer_id"  value="null">
+        <br>
+
+        <label for="w">Discount</label><input id="discount2" name="discount"  value="null">
+        <br>
+
+        <label for="w">Gross Amount</label><input id="grossAmount" name="gross_amount"  value="null">
+        <br>
+
+        <label for="w">Discount Amount</label><input id="discountAmount" name="discount_amount"  value="null">
+        <br>
+
+        <label>Business Type</label>
+        <select name="business_type" multiple size="3" >
+            <option th:each="bus_type: ${business_type}" th:value="${bus_type}" th:text="${bus_type}"></option>
+        </select><br>
+
+        <label for="w">Transaction ID</label><input id="transactionId" name="transaction_id"  value="null">
+        <br>
+
+        <p><input type="submit" value="Submit" class="btn2" /> 
+            <input type="reset" value="Reset" class="btn2"/>
+        </p>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+    <form action="#" th:action="@{/weaver}" th:object="${w}" method="post">
+        <h1 style="margin-bottom: -20px;">Statistics</h1>  <br>
+
+        <input name="role" value="Weaver" hidden />
+
+        <br>
+        <label for="w">ID</label><input id="id2" name="id" type="number" min="0" default="0">
+        <br>
+
+        <p><input type="submit" value="Submit" class="btn2" /> 
+            <input type="reset" value="Reset" class="btn2"/>
+        </p>
+    </form>
+</body>
+</html>
