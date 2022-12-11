@@ -39,7 +39,7 @@ The following prospects are handled by the application:
 
 ## Statistics
 
-- Queries like Which type of product was bought by the retailer and in which month can be answered using the statistics query.
+- Queries like which type of product was bought by the retailer and in which month can be answered using the statistics query.
 - Product specifications can be used for filtering of data.
 - An example present below shows the result of querying which type of product was sold in the monsoon and spring seasons and in which months specifically.
 - Bar graphs shows how much of each type is sold monthwise.
@@ -72,7 +72,8 @@ The following prospects are handled by the application:
 ## Visualizing the Graph
 ### 1. Weavers
 
-- Weavers are customers who sell products to the company. - The below graph shows one such product (orange nodes) which has been sold (represented by the edge) to the company by a number of weavers (purple nodes). 
+- Weavers are customers who sell products to the company. 
+- The below graph shows one such product (orange nodes) which has been sold (represented by the edge) to the company by a number of weavers (purple nodes). 
 - The details of each transaction is stored as that respective edge’s attributes.
 
  ![Weavers](src/main/resources/static/6.png)
