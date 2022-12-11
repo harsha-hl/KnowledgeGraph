@@ -376,7 +376,7 @@ input[type='radio']:checked:after {
           <button onClick="parent.open('/patch')" class="butn hoverr" style="background-color: #befa90; width: 100%;">Update DB</button>
         </div>
         <div class="col-md-9">
-          <div id="productSpec" style="display: none; margin-top: 75px;" class="query">
+          <div id="productSpec" style="display: none; margin-top: 15px;" class="query">
             <form action="#" th:action="@{/products}" th:object="${prods}" method="post">
                 <h1 style="margin-bottom: -20px;">Products</h1>  <br>
                 <div class="float-container">
@@ -426,7 +426,7 @@ input[type='radio']:checked:after {
             </form>
         </div>
     
-        <div id="transSpec" style="display: none;" class="query">
+        <div id="transSpec" style="display: none; margin-top: -100px;" class="query">
             <form action="#" th:action="@{/transactions}" th:object="${trans}" method="post">
                 <h1 style="margin-bottom: -20px;">Transactions</h1>  <br>
 
@@ -493,7 +493,7 @@ input[type='radio']:checked:after {
             </form>
         </div>
         
-        <div id="statSpec" style="display: none; margin-top: 10px;" class="query">
+        <div id="statSpec" style="display: none; margin-top: -100px;" class="query">
             <form action="#" th:action="@{/statistics}" th:object="${q12}" method="post">
                 <h1 style="margin-bottom: -20px;">Statistics</h1>  <br>
                 <div class="float-container">
