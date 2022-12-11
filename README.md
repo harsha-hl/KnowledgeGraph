@@ -1,7 +1,5 @@
 # Knowledge Graph web application using Spring Boot and Neo4J
 
-#### A graph analytics client application implementing a insight base using Neo4j cloud database and Springboot
-
 <p align="center"><img src="src/main/resources/static/landing.gif"/></p>
 
 The following prospects are handled by the application:
