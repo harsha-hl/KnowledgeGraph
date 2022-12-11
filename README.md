@@ -2,7 +2,7 @@
 
 #### A graph analytics client application implementing a insight base using Neo4j cloud database and Springboot
 
-<img src="src/main/resources/static/landing.gif"/>
+<p align="center"><img src="src/main/resources/static/landing.gif"/></p>
 
 The following prospects are handled by the application:
 
@@ -46,7 +46,7 @@ The following prospects are handled by the application:
 
  ![Stats](src/main/resources/static/3.png)
 
- <img src="src/main/resources/static/stat.gif"/>
+ <p align="center"><img src="src/main/resources/static/stat.gif"/></p>
 
 ## Transactions
 
@@ -57,7 +57,7 @@ The following prospects are handled by the application:
 
  ![Transactions](src/main/resources/static/4.png)
 
-<img src="src/main/resources/static/trans.gif"/>
+<p align="center"><img src="src/main/resources/static/trans.gif"/></p>
 
  ![Transactions](src/main/resources/static/5.png)
 
@@ -67,7 +67,7 @@ The following prospects are handled by the application:
  -  This real time updation of the graph database causes the newly entered data to be visible while running a new query. 
  - Similarly, every new transaction recorded across all centers of the company is inserted into the database by making use of our APIs.
 
-<img src="src/main/resources/static/update.gif"/>
+<p align="center"><img src="src/main/resources/static/update.gif"/></p>
 
 ## Visualizing the Graph
 ### 1. Weavers
@@ -77,7 +77,7 @@ The following prospects are handled by the application:
 
  ![Weavers](src/main/resources/static/6.png)
 
-<img src="src/main/resources/static/weavers.gif"/>
+<p align="center"><img src="src/main/resources/static/weavers.gif"/></p>
 
 ### 2. Retailers
 
@@ -86,4 +86,4 @@ The following prospects are handled by the application:
 
  ![Retailers](src/main/resources/static/7.png)
 
-<img src="src/main/resources/static/Retailers.gif"/>
+<p align="center"><img src="src/main/resources/static/Retailers.gif"/></p>
